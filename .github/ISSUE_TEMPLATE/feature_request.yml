@@ -1,0 +1,63 @@
+name: 🚀 Detailed Feature Request
+description: Propose a new feature with UI, API, and Logic specs.
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Thanks for contributing! 
+        Please fill out this form to ensure the dev team has everything they need to start coding.
+
+  - type: textarea
+    id: user-story
+    attributes:
+      label: 👤 User Story
+      description: Who is this for and why do they need it?
+      placeholder: "As a [user], I want to [action] so that [benefit]..."
+    validations:
+      required: true
+
+  - type: input
+    id: figma-link
+    attributes:
+      label: 🎨 UI / Figma Link
+      description: Link to the specific frame or prototype.
+      placeholder: "https://www.figma.com/file/..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: api-specs
+    attributes:
+      label: ⚙️ API / Backend Requirements
+      description: List endpoints, methods, and expected payloads.
+      placeholder: |
+        - Endpoint: POST /api/v1/example
+        - Headers: Auth Token
+        - Payload: { "id": string, "active": boolean }
+    validations:
+      required: true
+
+  - type: textarea
+    id: logic-flow
+    attributes:
+      label: 🧠 Logic & Flow (Mermaid)
+      description: Describe the technical logic or use Mermaid.js syntax.
+      value: |
+        ```mermaid
+        graph TD;
+            A[User Clicks Button] --> B{Is Auth?};
+            B -- Yes --> C[Call API];
+            B -- No --> D[Redirect to Login];
+        ```
+
+  - type: checkboxes
+    id: definition-of-done
+    attributes:
+      label: ✅ Definition of Done
+      options:
+        - label: UI matches Figma exactly (padding, colors, fonts)
+        - label: API response handled (loading/error states)
+        - label: Unit tests written for new logic
+        - label: Mobile responsive check
